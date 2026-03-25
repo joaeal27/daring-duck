@@ -5,8 +5,10 @@ public class Tape {
         this.startingInput = startingInput;
     }
 
-    public void left(){
-        
+    public void right(){
+        for(int i = 0; i < startingInput.length(); i++){
+            
+        }
     }
 }
 
