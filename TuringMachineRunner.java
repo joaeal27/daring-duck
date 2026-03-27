@@ -7,14 +7,14 @@ public class TuringMachineRunner {
         String input = "";
         Tape tape = new Tape(input);
 
-        State A    = new State("A",    false);
-        State B    = new State("B",    false);
-        State C    = new State("C",    false);
-        State D    = new State("D",    false);
-        State E    = new State("E",    false);
+        State A    = new State("A", false);
+        State B    = new State("B", false);
+        State C    = new State("C", false);
+        State D    = new State("D", false);
+        State E    = new State("E", false);
         State HALT = new State("HALT", true);
-
-
+        
+        
         //adding transitions
         // State A
         A.addTransition(new Transition('0', '1', 'R', "B"));
@@ -57,32 +57,18 @@ public class TuringMachineRunner {
 
         while (sm.step(tape)) {
             steps++;
-                System.out.println("  Steps so far: " + steps + "  |  Current state: " + sm.getCurrentState().getName());
         }
 
-        //reporting score
-        int ones       = tape.oneCount();
-        int numStates  = sm.stateCount();          
-        int numSymbols = 2;                        
-        int inputLen   = input.length();           
-
-        System.out.println("Machine halted in state : " + sm.getCurrentState().getName());
+        //reporting score  
         System.out.println("Total steps             : " + steps);
-        System.out.println();
-        System.out.println("Number of states  |S|   : " + numStates);
-        System.out.println("Alphabet size     |Γ|   : " + numSymbols);
-        System.out.println("Input length    |t_in|  : " + inputLen);
-        System.out.println("Ones on tape      O     : " + ones);
+        System.out.println("Number of states  |S|   : " + sm.stateCount());
+        System.out.println("Alphabet size     |Γ|   : " + 2);
+        System.out.println("Input length    |t_in|  : " + input.length());
+        System.out.println("Ones on tape      O     : " + tape.oneCount());
         System.out.println();
 
-        // Print the final tape (trimmed)
-        System.out.println("\nFinal tape (trimmed, first 200 chars):");
-        String tapeStr = tape.toString();
-        if (tapeStr.length() > 200) {
-            System.out.println(tapeStr.substring(0, 200) + "...[" + tapeStr.length() + " total chars]");
-        } 
-        else {
-            System.out.println(tapeStr);
-        }
+        // Print the final tape
+        System.out.println("\nFinal tape:");
+        System.out.println(tape.toString());
     }
 }
