@@ -46,7 +46,7 @@ public class Tape {
         }
     }
 
-    /** Move the head right, extending tape if necessary. */
+    // Move the head right, extending tape if necessary. 
     public void moveRight() {
         head++;
         if (head >= tape.size()) {
@@ -64,7 +64,7 @@ public class Tape {
         return count;
     }
 
-    /** Return a string representation of the tape (trims leading/trailing blanks). */
+    // Return a string representation of the tape (trims leading/trailing blanks). 
     public String toString() {
         int start = 0;
         int end = tape.size() - 1;
