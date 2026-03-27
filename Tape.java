@@ -1,6 +1,10 @@
+import java.util.HashMap;
+
 public class Tape {
     private String startingInput;
-    ArrayList<String> tape = new
+    private HashMap<Integer, Character> tape = new HashMap<>();
+    private int head = 0;
+    private final char empty = '_';
     //receives a starting input in its constructor, and can go left, right, read, and write. 
     //The Tape class should automatically resize when it discovers that more tape is needed. 
     // It should also have some sort of toString() or oneCount() method so that we can all see the output when the machine is done running!
@@ -15,10 +19,11 @@ public class Tape {
     }
 
     public void right(){
-        for(int i = 0; i < startingInput.length(); i++){
-            if()
+        
         }
     }
-}
+
+    public int oneCount()
+
 
 
