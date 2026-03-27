@@ -1,0 +1,3 @@
+Ryan Arumemi and Joaquin Ealdama 
+Our machine utilizes the 5 state busy beaver with 5 working states plus a halt state
+The starting string is empty, providing a cardinality of 0, which the Tape class handles with the initial 0

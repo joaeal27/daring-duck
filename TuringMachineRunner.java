@@ -13,7 +13,7 @@ public class TuringMachineRunner {
         State D    = new State("D", false);
         State E    = new State("E", false);
         State HALT = new State("HALT", true);
-        
+
         
         //adding transitions
         // State A
@@ -53,7 +53,7 @@ public class TuringMachineRunner {
         System.out.println("Input tape     : (empty)");
         System.out.println("Running...\n");
 
-        long steps = 0;
+        int steps = 0;
 
         while (sm.step(tape)) {
             steps++;
@@ -68,7 +68,7 @@ public class TuringMachineRunner {
         System.out.println();
 
         // Print the final tape
-        System.out.println("\nFinal tape:");
+        System.out.println("Final tape:");
         System.out.println(tape.toString());
     }
 }
