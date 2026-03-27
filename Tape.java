@@ -69,14 +69,17 @@ public class Tape {
         int start = 0;
         int end = tape.size() - 1;
         // Trim leading blanks
-        while (start < end && tape.get(start) == BLANK) start++;
+        while (start < end && tape.get(start) == BLANK) 
+            start++;
         // Trim trailing blanks
-        while (end > start && tape.get(end) == BLANK) end--;
+        while (end > start && tape.get(end) == BLANK) 
+            end--;
 
         StringBuilder sb = new StringBuilder();
         for (int i = start; i <= end; i++) {
             sb.append(tape.get(i));
         }
-        return sb.length() == 0 ? "[blank tape]" : sb.toString();
+
+        return sb.toString();
     }
 }

@@ -24,7 +24,6 @@ public class StateMachine {
     /** Retrieve a state by name (throws if not found). */
     public State getState(String name) {
         State s = states.get(name);
-        if (s == null) throw new IllegalArgumentException("Unknown state: " + name);
         return s;
     }
 
