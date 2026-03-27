@@ -1,3 +1,14 @@
 Ryan Arumemi and Joaquin Ealdama 
+
+Description: 
 Our machine utilizes the 5 state busy beaver with 5 working states plus a halt state
+States:
+A: will always write a 1, but if reads a 1 goes left and goes right if 0
+B: write 1's over 0's until you reach a 1
+C: see 0's, write 1 and go right, if 1, then put a 0 and move back left 
+D: write 1's over 0's until you see another 1, then write 1 go back left
+E: if find a 0, STOP, but if you find 1, write 0 and go left
+Halt: stops
+
+Input: 
 The starting string is empty, providing a cardinality of 0, which the Tape class handles with the initial 0

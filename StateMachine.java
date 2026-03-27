@@ -12,27 +12,21 @@ public class StateMachine {
         states = new HashMap<>();
     }
 
-    /** Register a state. */
     public void addState(State s) {
         states.put(s.getName(), s);
     }
 
-    /** Set the starting state by name. */
     public void setStartState(String name) {
         currentState = getState(name);
     }
 
-    /** Retrieve a state by name (throws if not found). */
+    // Retrieve a state by name 
     public State getState(String name) {
         State s = states.get(name);
         return s;
     }
 
-    /**
-     * Execute one step on the given tape.
-     * Returns true if the machine should keep running, false if it has halted.
-     * Throws RuntimeException if no transition is defined (machine crashes).
-     */
+    //verifies the step 
     public boolean step(Tape tape) {
         if (currentState.isHalt()) return false;
 
